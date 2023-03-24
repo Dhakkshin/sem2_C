@@ -4,6 +4,5 @@ int main(void)
 {
     int x = 10;
     int y = 5;
-    printf("The numbers are %i, %i\n",x,y);
-    
+    printf("The first is %i and sencond is %i.\n",x,y);
 }
