@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//to find the size of the data types
 int main()
 {
     printf(" Size of char is %li\n", sizeof(char));
