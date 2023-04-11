@@ -1,10 +1,18 @@
 #include <stdio.h>
 
-//multiples of 3
+//multiples
 int main(void)
 {
-    for (int i = 0; i < 11; i++)
+    int base,numberOfMultiples;
+    printf("Enter the base number followed by the number of multiples you want to see:");
+    scanf("%i %i", &base, &numberOfMultiples);
+    for (int i = 1; i <= numberOfMultiples; i++)
     {
-        printf("3 * %i = %i\n", i, i * 3);
+        //printf("%i's table till %i:\n",i, numberOfMultiples);
+        for (int j = 1; j <= base; j++)
+        {
+            printf("%i * %i = %i\t",j, i, i * j);
+        }
+        printf("\n");   
     }
 }
