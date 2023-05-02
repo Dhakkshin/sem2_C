@@ -2,14 +2,6 @@
 
 int main(void)
 {
-    // unsigned int u;
-    // for (u = 0; u < 255; u++)
-    // {
-    //     printf("%i %c\n", u, u);
-    // }
-    // char x = 10;
-    // printf("%c\n",x);
-    int a=4, b=5, c;
-    c = b++;
-    printf("%i %i %i\n", a, b, c);
+    int a[3][2] = {11,12};//,13,14,15,16};
+    printf("%i\n", a[2][1]);
 }
