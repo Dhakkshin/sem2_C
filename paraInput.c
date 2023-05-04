@@ -1,32 +1,19 @@
 #include <stdio.h>
-//#include <conio.h>
-#include <stdbool.h>
-
 
 int main(void)
 {
     int i = 0;
-    char c;
-    char paragraph[10000];
-    while (true)
+    char paragraph[5][1000];
+    printf("Enter paragraphs:\n(Enter ~ to stop)\n");
+    do
     {
-        c = getch();
-        if (c == 13)
-        {
-            break;
-        }
-        paragraph[i++] = c;
+        fgets(paragraph[i], 1000, stdin);
     }
-    printf("%s", paragraph);
+    while(paragraph[i++][0] != '~');
 
-    // do
-    // {
-    //     c = getchar();
-    //     putchar(c);
-    // }
-    // while (c != 13);
+    printf("You entered:\n");
+    for(int i = 0; i < 5; i++)
+    {
+        printf("%s", paragraph[i]);
+    }
 }
-char *c;
-int i = 0;
-while ((c[i++] = getchar()) != 13);
-printf("%s", c);
