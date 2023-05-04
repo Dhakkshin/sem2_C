@@ -3,7 +3,6 @@
 
 int main(void)
 {
-    fflush(stdin);
     char arr[3][3], a;
     printf("Enter chars for a 3X3 2D array.\n");
     for (int i = 0; i < 3; i++)
