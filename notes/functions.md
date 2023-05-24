@@ -2,13 +2,13 @@
 
 ### syntax
 
-`
+```
 return_datatype func_name(argumnets with datatype)
 {
     //func body
     return *placeholder*;
 }
-`
+```
 ### function prototype should placed above main
 
 ### func1
@@ -139,11 +139,11 @@ bool isFactor(int n, int x)
 ```
 
 ## passing array to func
-```
+`
 void func(arr[])
-```
+`
 ### 
-- ```[]``` in ```arr[]``` can be empty here
+- `[]` in `arr[]` can be empty here
 - it is good practice always pass the length of the array as well as an argument
 
 ```
