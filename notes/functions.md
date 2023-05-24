@@ -2,7 +2,7 @@
 
 ### syntax
 
-```
+```c
 return_datatype func_name(argumnets with datatype)
 {
     //func body
@@ -12,7 +12,7 @@ return_datatype func_name(argumnets with datatype)
 ### function prototype should placed above main
 
 ### func1
-```
+```c
 #include <stdio.h>
 
 void func1(int a, int b);
@@ -34,7 +34,7 @@ void func1(int a, int b)
 ### 
 1. factors
 
-```
+```c
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -64,7 +64,7 @@ bool isFactor(int n, int x)
 
 ### 
 2. prime
-```
+```c
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -95,7 +95,7 @@ bool isFactor(int n, int x)
 ```
 ### 
 3. prime in range
-```
+```c
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -139,21 +139,21 @@ bool isFactor(int n, int x)
 ```
 
 ## passing array to func
-`
+```c
 void func(arr[])
-`
+```
 ### 
 - `[]` in `arr[]` can be empty here
 - it is good practice always pass the length of the array as well as an argument
 
-```
-arr[2][3]
-arr[][3]
-arr[2][] -> wrong when using intialisation
+```c
+arr[2][3] -> allowed
+arr[][3]  -> allowed
+arr[2][]  -> wrong when using intialisation
 ```
 ### 
 4. passing 2d array
-```
+```c
 #include <stdio.h>
 
 void print_arr(int arr[][3], int col_len, int row_len);
@@ -209,7 +209,7 @@ void print_arr(int arr[][3], int col_len, int row_len)
 - in each recursive call, the problem size should *decrease* until base case is reached
 
 ### Example-1 factorial:
-```
+```c
 #include <stdio.h>
 
 int main(void)
