@@ -2,13 +2,13 @@
 
 ### syntax
 
-```
+`
 return_datatype func_name(argumnets with datatype)
 {
     //func body
     return *placeholder*;
 }
-```
+`
 ### function prototype should placed above main
 
 ### func1
@@ -182,7 +182,7 @@ void print_arr(int arr[][3], int col_len, int row_len)
 
 ## 24/05/2023
 
-### varialble scope
+### variable scope
 - variables exclusive to a func -> local/auto variable
 - scope -> part of program where the variable exists and is accessible
 - lifetime -> time during which it is present in memory - same as that of the parent func
