@@ -194,8 +194,8 @@ void print_arr(int arr[][3], int col_len, int row_len)
 ## Recursion:
 ### - is when a function calls itself repeatedly
 ### - a recursive func always has:
-        + base case (when the recursion stops)
-        + recursive case (all except base case)
+###    + base case (when the recursion stops)
+###    + recursive case (all except base case)
 ### - in each recursive call, the problem size should *decrease* until base case is reached
 
 ### Example-1 factorial:
