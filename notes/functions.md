@@ -29,8 +29,7 @@ void func1(int a, int b)
 }
 ```
 
-##
-23/05/2023
+## 23/05/2023
 
 ### 
 1. factors
@@ -181,16 +180,16 @@ void print_arr(int arr[][3], int col_len, int row_len)
 }
 ```
 
-## 
-24/05/2023
-varialble scope
-### 
+## 24/05/2023
+
+### varialble scope
 - variables exclusive to a func -> local/auto variable
 - scope -> part of program where the variable exists and is accessible
 - lifetime -> time during which it is present in memory - same as that of the parent func
 
 ## stack
-### - LIFO
+### 
+- LIFO
 - accessible only at *one end*
 - push(insert) and pop(remove)
 - top -> points to the top-most element of the stack
