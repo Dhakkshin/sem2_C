@@ -29,9 +29,11 @@ void func1(int a, int b)
 }
 ```
 
-##23/05/2023
+##
+23/05/2023
 
-### factors
+### 
+1. factors
 
 ```
 #include <stdio.h>
@@ -61,7 +63,8 @@ bool isFactor(int n, int x)
 }
 ```
 
-### prime
+### 
+2. prime
 ```
 #include <stdio.h>
 #include <stdbool.h>
@@ -91,7 +94,8 @@ bool isFactor(int n, int x)
     return (n % x == 0);
 }
 ```
-### prime in range
+### 
+3. prime in range
 ```
 #include <stdio.h>
 #include <stdbool.h>
@@ -139,15 +143,17 @@ bool isFactor(int n, int x)
 ```
 void func(arr[])
 ```
-### [] in arr[] can be empty here
-### it is good practice always pass the length of the array as well as an argument
+### 
+- ```[]``` in ```arr[]``` can be empty here
+- it is good practice always pass the length of the array as well as an argument
 
 ```
 arr[2][3]
 arr[][3]
 arr[2][] -> wrong when using intialisation
 ```
-### passing 2d array
+### 
+4. passing 2d array
 ```
 #include <stdio.h>
 
@@ -175,8 +181,11 @@ void print_arr(int arr[][3], int col_len, int row_len)
 }
 ```
 
-## varialble scope
-### - variables exclusive to a func -> local/auto variable
+## 
+24/05/2023
+varialble scope
+### 
+- variables exclusive to a func -> local/auto variable
 - scope -> part of program where the variable exists and is accessible
 - lifetime -> time during which it is present in memory - same as that of the parent func
 
@@ -187,12 +196,14 @@ void print_arr(int arr[][3], int col_len, int row_len)
 - top -> points to the top-most element of the stack
 
 ## stack-func relation
-### - everytime a func is called the func (and its loacl variables & arguments) are *pushed to a stack of active functions*
+### 
+- everytime a func is called the func (and its loacl variables & arguments) are *pushed to a stack of active functions*
 - everytime a func returns, it is *popped from the stack* and the new top is the same *state* that it was in before calling the func that was just returned. 
      - when the a func is popped, all variables in that scope are lost but variables in the previous/parent func still exist (with values unchanged unless the pooped func returns a values and that is assigned to it) even if they have same name as the variable lost in the popped func.
 
 ## Recursion:
-### - is when a function calls itself repeatedly
+### 
+- is when a function calls itself repeatedly
 - a recursive func always has:
     -  base case (when the recursion stops)
     -  recursive case (all except base case)
