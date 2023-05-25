@@ -2,13 +2,12 @@
 
 # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Problem Sheet 2
 
-## *** Q2
+## Q2
 Write a C function named sort that takes a 1D integer array as input and sorts the array elements in
 ascending order. The function should modify the original array passed as an argument. Implement the
 function and provide a sample usage.
 Function Signature:
 `void sort(int arr[], int size);`
-***
 
 ```c
 #include <stdio.h>
@@ -43,7 +42,7 @@ void sort(int arr[], int size)
 }
 ```
 
-## *** Q3
+##  Q3
 Write a program in C to perform the following operations on arrays of strings:
 
 - Find the length of the shortest string.
@@ -62,7 +61,6 @@ float calculateAverageLength(char arr[][100], int n);
 int countStringsAboveThreshold(char arr[][100], int n, int threshold);
 Provide the necessary user prompts and handle the input/output accordingly. Write the program code
 and the necessary functions to implement the above operations.
-***
 
 ```c
 #include <stdio.h>
