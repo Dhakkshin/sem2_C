@@ -208,7 +208,7 @@ void print_arr(int arr[][3], int col_len, int row_len)
     -  recursive case (all except base case)
 - in each recursive call, the problem size should *decrease* until base case is reached
 
-### Example-1 factorial:
+### 1. factorial:
 ```c
 #include <stdio.h>
 
@@ -231,5 +231,34 @@ int factorial(int n)
     {
         return n * factorial(n - 1);
     }
+}
+```
+2. nth fibonacci number
+```c
+// nth fibonacci number
+#include <stdio.h>
+
+int fibo(int n);
+
+int main(void)
+{
+    printf("Enter a number: ");
+    int num;
+    scanf("%i", &num);
+
+    printf("The %ith fibonacci number is %i.\n", num, fibo(num));
+}
+
+int fibo(int n)
+{
+    if (n == 1)
+    {
+        return 0;
+    }
+    else if (n < 4)
+    {
+        return 1;
+    }
+    return fibo(n - 1) + fibo (n - 2);
 }
 ```
