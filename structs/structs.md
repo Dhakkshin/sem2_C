@@ -24,6 +24,7 @@ struct student
     int age;
     float marks[6];
 };
+```
 
 - declaration does *not* take memory space
 - name, roll_no etc are stuct members
