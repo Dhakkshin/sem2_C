@@ -1,10 +1,10 @@
 ## 26/5/23
 
-# structs
+# Structs
 
 ### - user defined datatype
-- keyword: struct
-- declaration synatx:
+- Keyword: struct
+- Declaration synatx:
 
 ```c
 struct struct_name
@@ -26,15 +26,15 @@ struct student
 };
 ```
 
-- declaration does *not* take memory space
-- name, roll_no etc are stuct members
-- no structure member can be intialised.
-- structure member can be accessed only through the structure variable using the dot (.) operator.
-- usage:
+- Declaration does *not* take memory space
+- Name, roll_no etc are stuct members
+- No structure member can be intialised.
+- Structure member can be accessed only through the structure variable using the dot (.) operator.
+- Usage:
 ```c
 struct student s;
 ```
-- to create a global struct variable outside main, add the variable name after the `;` in the struct declaration.
+- To create a global struct variable outside main, add the variable name after the `;` in the struct declaration.
 
 - Example Code 1 (Get deatails for 1 student)
 ```c
@@ -137,10 +137,195 @@ int main(void)
 }
 ```
 
-- irrelevent note:
+- Irrelevent note:
 `extern` in C is akin to `global` in Python.
 `extern` tells the compiler "trust me, there's an `i` out there, use it and dont throw a fit."
 
 - `int i;` is definition.
 - `extern int i;` is declaration.
-- declaration does not allocate memory and can not be initialised in the same statement.
+- Declaration does not allocate memory and can not be initialised in the same statement.
+
+## 29/05/23
+
+### - one way to initialise:
+```c
+struct employees 
+{
+    char name[100];
+    int id;
+} e= {'Dhakkshin', 4};
+```
+This has one-to-one relationship, just like format specifiers.
+
+- Another way (using `strcpy()`):
+```c
+#include <stdio.h>
+#include <string.h>
+
+struct employees
+{
+    char name[100];
+    int id;
+} e;
+
+int main(void)
+{
+    strcpy(e.name, "Dhakkshin");
+    e.id = 4;
+
+    printf("Name : %s\nID   : %i\n", e.name, e.id);
+}
+```
+- Yet another way:
+```c
+#include <stdio.h>
+
+struct employees
+{
+    char name[100];
+    int id;
+};
+
+int main(void)
+{
+    struct employees e = {.name = "Dhakkshin", .id = 4};
+
+    printf("Name : %s\nID   : %i\n", e.name, e.id);
+}
+```
+
+1. Question 1
+    Create a record for 3 employees with the struct defined above
+
+    - Method 1:
+
+```c
+#include <stdio.h>
+
+struct employees
+{
+    char name[100];
+    int id;
+};
+
+int main(void)
+{
+    struct employees e[3] = {{.name = "Dhakkshin", .id = 4}, {.name = "qwerty", .id = 1}, {.name = "ytrewq", .id = 2}};
+
+    for (int i = 0; i < 3; i++)
+    {
+        printf("Name : %s\nID   : %i\n\n", e[i].name, e[i].id);
+    }
+}
+```
+    - Method 2:
+
+```c
+#include <stdio.h>
+struct employees
+{
+    char name[100];
+    int id;
+};
+
+int main(void)
+{
+    struct employees e[3];
+    e[0] = (struct employees){"Dhakkshin", 4};
+    e[1] = (struct employees){"qwerty", 2};
+    e[2] = (struct employees){"ytrewq", 2};
+    
+    for (int i = 0; i < 3; i++)
+    {
+        printf("Name : %s\nID   : %i\n\n", e[i].name, e[i].id);
+    }
+}
+```
+
+    - Method 3:
+```c
+#include <stdio.h>
+
+struct employees
+{
+    char name[100];
+    int id;
+};
+
+int main(void)
+{
+    struct employees e[3];
+    char dummy;
+
+    for (int i = 0; i < 3; i++)
+    {
+        printf("Employee %i\nEnter the name: ", i + 1);
+        fgets(e[i].name, 100, stdin);
+
+        printf("Enter ID: ");
+        scanf("%i", &e[i].id);
+        scanf("%c", &dummy); //to get rid of the return character in the buffer
+    }
+    
+    for (int i = 0; i < 3; i++)
+    {
+        printf("Name : %sID   : %i\n\n", e[i].name, e[i].id);
+    }
+}
+```
+
+2. Question 2
+create a struct for a person with a name, height, marks(6) and age. Get input for 3 persons
+  - intitalise
+  - get input
+  - print values, average marks for each person.
+
+```c
+#include <stdio.h>
+
+struct person
+{
+    char name[100];
+    float height;
+    int age;
+    float marks[6];
+    float avg;
+};
+
+int main(void)
+{
+    struct person people[3];
+    char dummy;
+
+    //getting inputs
+    for (int i = 0; i < 3; i++)
+    {
+        printf("Person %i\nEnter the name: ", i + 1);
+        fgets(people[i].name, 100, stdin);
+
+        printf("Enter Height: ");
+        scanf("%f", &people[i].height);
+        scanf("%c", &dummy);
+
+        printf("Enter Age: ");
+        scanf("%i", &people[i].age);
+        scanf("%c", &dummy);
+
+        for (int j = 0; j < 6; j++)
+        {
+            printf("Enter mark %i: ", j + 1);
+            scanf("%f", &people[i].marks[j]);
+            scanf("%c", &dummy);
+            people[i].avg += people[i].marks[j];
+        }
+        people[i].avg /= (float) 6;
+    }
+
+    printf("\n");
+    // printing the data
+    for (int i = 0; i < 3; i++)
+    {
+        printf("Person %i\nName: %sHeight: %f\nAge: %i\nAvg : %f\n\n", i + 1, people[i].name, people[i].height, people[i].age, people[i].avg);
+    }
+}
+```
