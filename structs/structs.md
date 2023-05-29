@@ -147,7 +147,8 @@ int main(void)
 
 ## 29/05/23
 
-### - one way to initialise:
+### 
+- one way to initialise:
 ```c
 struct employees 
 {
@@ -194,10 +195,9 @@ int main(void)
 }
 ```
 
-1. Question 1
-    Create a record for 3 employees with the struct defined above
+1. Create a record for 3 employees with the struct defined above
 
-    - Method 1:
+ - Method 1:
 
 ```c
 #include <stdio.h>
@@ -218,7 +218,7 @@ int main(void)
     }
 }
 ```
-    - Method 2:
+  - Method 2:
 
 ```c
 #include <stdio.h>
@@ -242,7 +242,7 @@ int main(void)
 }
 ```
 
-    - Method 3:
+   - Method 3:
 ```c
 #include <stdio.h>
 
@@ -274,8 +274,7 @@ int main(void)
 }
 ```
 
-2. Question 2
-create a struct for a person with a name, height, marks(6) and age. Get input for 3 persons
+2. Create a struct for a person with a name, height, marks(6) and age. Get input for 3 persons
   - intitalise
   - get input
   - print values, average marks for each person.
