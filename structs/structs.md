@@ -274,10 +274,8 @@ int main(void)
 }
 ```
 
-2. Create a struct for a person with a name, height, marks(6) and age. Get input for 3 persons
-  - intitalise
-  - get input
-  - print values, average marks for each person.
+2. Create a struct for a person with a name, height, marks(6), avg marks and age. Get input for 3 persons
+
 - Method 1
 ```c
 #include <stdio.h>
@@ -467,3 +465,5 @@ struct person maxAvg(struct person x[], int len)
     return max;
 }
 ```
+
+
