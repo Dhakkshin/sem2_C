@@ -44,6 +44,18 @@ int main(void)
     //filtering smaller subs
     for (int i = 0; i < count; i++)
     {
-        for (int j = 0; )
-    }
+        for (int j = i + 1; j < count; j++)
+        {
+            if (ones[i][2] * ones[i][3] > ones[j][2] * ones[j][3])
+            {
+                int temp[4];
+                for (int k = 0; k < 4; k++)
+                {
+                    temp[k] = ones[i][k];
+                    ones[i][k] = ones[j][k];
+                    ones[j][k] = temp[k];
+                }
+            }
+        }
+
 }

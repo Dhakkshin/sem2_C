@@ -167,3 +167,13 @@ void swap(int *a, int *b)
     *b = temp;
 }
 ```
+- For char array alone this thype of initialisation is allowed:
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    char *c = "hello";
+    printf("%s\n",c);
+}
+```
