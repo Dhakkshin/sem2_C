@@ -4,7 +4,7 @@
 
 malloc()
 
-### - takes the number of bytes a argument and return the address of the first byte of that chunk of memory.
+### - takes the number of bytes a argument and return the address of the first byte of that chunk of memory
 
 - Usage: `(void *)malloc(size);` can be later typecast to the appropriate  type
 - Example:
@@ -76,3 +76,6 @@ int main(void)
   - decrease the size, it returns the original pointer but with the reduced size. Values present outside the reduced location are lost.
 
 - Code 3 - write a program that takes a sentence as input, dynamically allocates memory for that sentence and counts number of words in that sentence.
+
+- code 4
+
