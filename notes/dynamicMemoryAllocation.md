@@ -77,5 +77,33 @@ int main(void)
 
 - Code 3 - write a program that takes a sentence as input, dynamically allocates memory for that sentence and counts number of words in that sentence.
 
-- code 4
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
 
+int main(void)
+{
+    printf("Enter a sentence:\n");
+
+    int size = 1, words = 0;
+    char *s = malloc(sizeof(char));
+    do
+    {
+        *(s + size - 1) = getch();
+        if (*(s + size - 1) == ' ')
+        {
+            words += 1;
+        }
+        size += 1;
+        s = realloc(s, sizeof(char) * size);
+    }
+    while (*(s + size - 2) != '.');
+
+    *(s + size - 1) = '\0';
+
+    printf("\nEnterned sentence is:\n%s\nIt has %i words", s, words + 1);
+
+    free(s);
+}
+```
