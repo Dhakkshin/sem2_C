@@ -107,3 +107,76 @@ int main(void)
     free(s);
 }
 ```
+## 20/06/23
+
+ DImensional Pointers
+
+- array of pointers:
+    - `int *p[4]`
+    - here, each element in the 4 elemnt array is an integer pointer.
+
+- pointer to an array:
+    - `int (*p)`[4]
+    - simply points to begining of the array
+
+- Code 1:
+Create an array of int pointers, initialise 4 ints, initialise the array to the pointers of those 4 ints. Print the address and the int value using the the array's name.
+
+```c
+//array of pointers
+#include <stdio.h>
+
+int main(void)
+{
+    int *a[4];
+    int w = 1, x = 2, y = 3, z = 4;
+
+    a[0] = &w;
+    a[1] = &x;
+    a[2] = &y;
+    a[3] = &z;
+    
+    for (int i = 0; i < 4; i++)
+    {
+        printf("%p, %i\n", a[i], *a[i]);
+    }
+}
+```
+
+- In 2D array pointer arithmetic of +1 will go to the next row.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int mat[3][4] = {{1, 2, 3, 4}, 
+                    {5, 6, 7, 8}, 
+                    {9 ,10, 11, 12}};
+
+    int (*p)[4] = mat;
+
+    for (int i = 0; i < 3; i++)
+    {
+        printf("%p, %i\n", *(p + i) + 1, *(*(p + i) + 1));
+    }
+}
+```
+
+- array of 5 pointers pointing to floats:
+```c
+float *p[5];
+float a = 1, b = 2, c = 3, d = 4, e = 5;
+
+```
+
+- side note:
+The following point to the same thing:
+    - `p[4]`
+    - `*(p + 4);`
+    - `*(4 + p);`
+    - `4[p];`
+where p is a pointer to an array and 4 can be any index.
+
+- Accessing elements in 2D arrays: `*(*(p + 1) + 1)`.
+
