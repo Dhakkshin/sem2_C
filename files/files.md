@@ -18,6 +18,7 @@ Reading and Writing from files
 
 - `fread()`
 - `fwrite()`
+   - `fwrite(&var, sizeof(var), 1, fptr)`
 - `fclose()`
 - `fseek(fptr, no_of_bytes, origin)`
     - number_of_bytes:
@@ -39,6 +40,18 @@ Reading and Writing from files
         {
             // do something
         }
+        ```
+- `fprintf()`
+    - `fprintf(fptr, "format string", arg1, arg2, ...)`
+    - Example:
+        ```c
+        fprintf(fptr, "%s %i", "Hello", 10);
+        ```
+- `fscanf()`
+    - `fscanf(fptr, "format string", arg1, arg2, ...)`
+    - Example:
+        ```c
+        fscanf(fptr, "%s %i", str, &n);
         ```
 
 1. Code to writr and read multiple lines (text file)
@@ -119,3 +132,69 @@ int main(void)
     fclose(fptr2);
 }
 ```
+
+
+## 11 / 7 / 23
+Enumerations
+
+###
+- `enum` is a user defined data type
+- `enum` is used to assign names to integral constants
+- `enum` is used to make the code more readable and maintainable
+
+- Syntax:
+    ```c
+    enum enum_name
+    {
+        constant1,
+        constant2,
+        constant3,
+        ...
+    };
+    ```
+- Example along with usage:
+    ```c
+    #include <stdio.h>
+
+    enum week
+    {
+        Monday,    // 0
+        Tuesday,   // 1
+        Wednesday, // 2
+        Thursday,  // 3
+        Friday,    // 4
+        Saturday,  // 5
+        Sunday     // 6
+    };
+
+    int main(void)
+    {
+        enum week today;
+        today = Wednesday;
+        printf("Day %i\n", today + 1);
+    }
+    ```
+- usage with scanf:
+    ```c
+    enum ErrorCode
+    {
+        on,
+        off
+    };
+    scanf("%i", (int *)&e);
+    ```
+- enum is not a string, it is an integer
+
+- example with initialisation:
+    ```c
+    enum week
+    {
+        Monday = 1,    // 1
+        Tuesday,       // 2
+        Wednesday = 5, // 5
+        Thursday,      // 6
+        Friday,        // 7
+        Saturday,      // 8
+        Sunday         // 9
+    };
+    ```
