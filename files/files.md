@@ -54,7 +54,7 @@ Reading and Writing from files
         fscanf(fptr, "%s %i", str, &n);
         ```
 
-1. Code to writr and read multiple lines (text file)
+1. Code to write and read multiple lines (text file)
 ```c
 #include <stdio.h>
 
